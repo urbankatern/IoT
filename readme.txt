@@ -177,4 +177,50 @@
         - broker ji posreduje sporocila iz teh tem
     Potek: senzor => publisher => broker => subscriber
 
-25. 
+25. Podrobno primerjajte nivoje kakovosti storitve QoS 0, QoS 1 in QoS 2 v protokolu MQTT. Kdaj uporabimo posameznega?
+    
+26. Razlozite tehnologijno LoRaa in omrezno plast LoRaWAN. Kako modulacija Chirp Spread Spectrum (CSS) omogoca dolg doseg?
+
+27. Analizirajte varnostne ranljivosti, ki so omogocile napad botneta Mirai in opisite ukrepe za zascito sodobnih IoT naprav.
+    Mirai je botnet, ki je izkoriscal slabo zascito IoT naprav, kot so IP-kamere. Njihove glavne ranljivosti so sibka privzeta gesla, ki jih uporabniki pogosto niso spreminjali in neposredna dostopnost preko interneta. Ukrepi proti takim ranljivostim so sprememba gesel po prvi uporabi, uporaba dolgih in edinstvenih gesel in redno namescanje varnostnih posodobitev.
+
+28. Opisite zgradbo in delovanje pametnega domacega termostata kot celovitega sistema (od senzorja do oblaka in uporabnika), kot ga sami razumete.
+    Senzor: meri temperaturo, vlaznost, itd.
+    Mikrokrmilnik: obdela meritve in jih primerja z nastavljeno temperaturo
+    Aktuator: na podlagi odlocitve vklopi ali izklopi ogrevanje
+    Oblak: shranjuje podatke o gretju, omogoca analizo
+    Uporabnik: preko telefona spreminja in nadzoruje nastavitve temperature
+
+29. Razlozite pojem "Digitalni dvojcek" (Digital twin) v industrijskem internetu stvari (IIoT) in navedite primer njegove uporabe.
+    Digitalni dvojcek je digitalen model fizicnega objekta, stroja ali procesa, ki se s pomocjo podatkov iz senzorjev cim bolj sproti posodablja glede na stanje fizicnega sistema.
+    Primer: industrijski motor ima senzorje za merjenje njegovega delovanja, senzorji posljejo podatke v informacijski sistem, kjer njegov digitalni dvojcek prikazuje trenutno stanje motorja.
+
+30. Pojasnite razliko med pasivnimi in aktivnimi RFID sistemi ter opisite delovanje NFC tehnologije.
+    Pasivni RFID nima lastne baterije, napaja se z elektro magnetskim poljem citalnika, ima krajsi domet in manjso ceno. Aktivni RFID ima lastno baterijo, vecji domet in je posledicno tudi drazji.
+    NFC je tehnologija za komunikacijo na zelo kratke razdalje, deluje pri 13,56 MHz in omogoca komunikacijo med napravami, prva naprava prebere podatke druge, lahko tudi dvosmerno.
+
+31. Razlozite pomen energetske optimizacije pri baterijskih IoT napravah in opisite tehnike spanja (Sleep Modes) pri mikrokrmilnikih (hint Class-A).
+    Pri IoT napravah je poraba energije zelo pomembna, obicajno porabi najvec energije aktivno delovanje mikrokrmilnika in senzorjev ter komunikacija med napravami. Da bi porabo znizali, lahko definiramo casovni interval: ko se naprava zbudi opravi meritve in poslje podatke, nato pa preklopi v nacin spanja, kjer je poraba energije zelo majhna.
+
+32. Analizirajte in argumentirajte eticne in pravne vidike zajema podatkov v sistemih pametnih mest z vidika Splosne uredbe o varstvu podatkov (GDPR).
+    Eticno vprasanje je predvsem ravnotezje med koristijo za mesto in zasebnost prebivalcev, npr. sistem kamer, ki lahko pomaga pri upravljanju prometa, vendar hkratni omogoca mnozicno spremljanje gibanja ljudi. Zato je potrebno, da se pri takih sistemih ureja anonimizacija, omejitev dostopa, sifriranje ipd.
+
+33. Opisite zgradbo in delovanje pametnega sistema za ravmamke z odpadki v pametnem mestu (Smart Waste Management).
+    1. Senzor v zabojniku meri napolnjenost zabojnikov ter druge parametre
+    2. Mikrokrmilnik / IoT naprava obdela meritev
+    3. Brezzicna povezava - s pomocjo protokola LoRaWAN mikrokrmilnik poslje obdelane podatke na oblak (Cloud)
+    4. Cloud - meritve se shranijo in analizirajo
+    5. uporabnik - delavcu na komunali digitalni dvojcek prikazuje podatke, delavec se odloci ali je potrebno poslati ljudi, da zabojnike spraznijo ali preverijo
+    6. Odvoz - vozila dobijo optimalno pot glede na napolnjenost zabojnikov
+
+34. Kaj je tehnologija Bluetooth Mesh in kako se razlikuje od tradicionalnega prenosa Bluetooth tocka-tocka?
+    Bluetooth Mesh je omrezna tehnologija, pri kateri lahko vec Bluetooth naprav sodeluje v mrezni (mesh) topologiji.
+    Pri Bluetooth komunikaciji imamo povezavo A <=> B, pri Bluetooth mesh tehnologiji pa lahko sporocilo potuje preko vecih naprav (A => B => C => D)
+    Naprave v omrezju lahko sporocilo posredujejo naprej, zato komunikacija ni omejena na neposredno povezane naprave.
+
+35. Razlozite, kaj je "Man-in-the-Middle" (MITM) napad na nezasciteno IoT omrezje in kako ga preprecimo..
+    MITM napad se zgodi, ko napadalec prestreze komunikacijo med dvema napravama in se postavi med njiju, napadalec nato poskusa prestrezti ali spremeniti komunikacijo. (Namesto BT naprava <=> streznik pride do IoT naprava <=> napadalec <=> streznik)
+    Preprecujemo ga z sifriranjem komunikacije, medsebojno preverjanje identitete naprave in mocno avtentikacijo.
+
+36. Opredelite pomen standardizacije v IoT in vlogo organizacij (IEEE, IETF, ITU, 3GPP) pri zagotavlanju interoperabilnosti.
+    Standardizacija zagotavlja, da lahko naprave razlicnih proizvajalcev med seboj komunicirajo. S tem omogocamo povezovanje IoT naprav razlicnih proizvajalcev. Vloga organizacij je ustvarjanje standardov in pravil, ki se jih proizvajalci drzijo, kar omogoca interoperabilnost (kompatibilnost naprav razlicnih prozivajalcev).
